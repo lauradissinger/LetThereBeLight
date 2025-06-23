@@ -11,6 +11,11 @@ unsigned long lastKeepAliveStartTime = 0;
 void setup() {
   // put your setup code here, to run once:
   lightSwitcher.attach(PIN_SERVO);
+
+  // Set to the mid point to block the sensor and delay briefly, then we'll move out of the way again
+  lightSwitcher.write(90);
+  delay(3000);
+
   lightSwitcher.write(0);
 }
 
